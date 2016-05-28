@@ -5,7 +5,14 @@
     "Paulo Diovani <paulo@diovani.com>"
   ],
   "description": "A talk for Node.js beginners, with a plataform overview, cases and examples.",
-  "main": "index.html",
+  "main": [
+    "css/*.css",
+    "img/**/*.{jpg,png,svg}",
+    "js/*.js",
+    "*.md",
+    "cover.jpg",
+    "index.html"
+  ],
   "keywords": [
     "talk",
     "slides",
