@@ -9,20 +9,26 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="../../css/reveal.min.css">
-        <link rel="stylesheet" href="../../css/theme/night.css" id="theme">
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/theme/night.css" id="theme">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="../../lib/css/zenburn.css">
+        <link rel="stylesheet" href="./bower_components/reveal.js/lib/css/zenburn.css">
         <!-- custom styles for presentation -->
-        <link rel="stylesheet" href="../shared/styles.css">
-        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/custom.css">
 
-        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-        <script src="../shared/js/print-pdf.js"></script>
+        <!-- Printing and PDF exports -->
+        <script>
+          var link = document.createElement( 'link' );
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = window.location.search.match( /print-pdf/gi ) ? './bower_components/reveal.js/css/print/pdf.css' : './bower_components/reveal.js/css/print/paper.css';
+          document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 
         <!--[if lt IE 9]>
-        <script src="../../lib/js/html5shiv.js"></script>
+        <script src="./bower_components/reveal.js/lib/js/html5shiv.js"></script>
         <![endif]-->
     </head>
 
@@ -33,8 +39,8 @@
                 <section>
                     <section data-markdown="title.md"></section>
                     <section data-markdown="toc.md"></section>
-                    <section data-markdown="../shared/bio.md"></section>
-                    <section data-markdown="../shared/company.md"></section>
+                    <section data-markdown="bio.md"></section>
+                    <section data-markdown="company.md"></section>
                 </section>
                 <section data-markdown="content.md"
                          data-separator="^----"
@@ -42,13 +48,27 @@
                          data-separator-notes="^Note:"
                          data-charset="utf-8">
                 </section>
-                <section data-markdown="../shared/credits.md"></section>
+                <section data-markdown="./credits.md"></section>
             </div>
         </div>
 
-        <script src="../../lib/js/head.min.js"></script>
-        <script src="../../js/reveal.js"></script>
-        <script src="../shared/js/reveal-init.js"></script>
-        <script src="../shared/js/pointer-fix.js"></script>
+        <script src="./bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="./bower_components/reveal.js/js/reveal.js"></script>
+        <script>
+          // More info https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            history: true,
+            controls: false,
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+              { src: './bower_components/reveal.js/plugin/markdown/marked.js' },
+              { src: './bower_components/reveal.js/plugin/markdown/markdown.js' },
+              { src: './bower_components/reveal.js/plugin/notes/notes.js', async: true },
+              { src: './bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            ]
+          });
+        </script>
+        <script src="./js/pointer-fix.js"></script>
     </body>
 </html>
