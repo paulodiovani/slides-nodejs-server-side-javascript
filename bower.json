@@ -4,7 +4,7 @@
   "authors": [
     "Paulo Diovani <paulo@diovani.com>"
   ],
-  "description": "A talk for Node.js beginners, with a plataform overview, cases and examples.",
+  "description": "Node.js for beginners. Plataform overview, cases and examples.",
   "main": [
     "css/*.css",
     "img/**/*.{jpg,png,svg}",
